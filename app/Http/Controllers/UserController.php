@@ -27,7 +27,7 @@ class UserController extends Controller
         return response()->json($user, 201);
     }
 
-    public function update(Request $request){
+    public function update(Request $request, int $id){
 
         $user = User::findOrFail($request->id);
 
