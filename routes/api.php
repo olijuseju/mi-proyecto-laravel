@@ -26,6 +26,8 @@ Route::get('lecturas',[LecturaController::class, 'index']);
 
 Route::get('lecturas/{id}', [LecturaController::class, 'show']);
 
+Route::get('lecturas/latest/{num}', [LecturaController::class, 'latest']);
+
 Route::post('lecturas', [LecturaController::class, 'store']);
 
 Route::put('lecturas/{id}', [LecturaController::class, 'update']);

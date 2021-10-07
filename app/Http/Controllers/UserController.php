@@ -41,6 +41,8 @@ class UserController extends Controller
         return $logica->obtenerUserConId($id);
     }
 
+
+
     public function delete(Request $request)
     {
         $logica = new LogicaUser();
