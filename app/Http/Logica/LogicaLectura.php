@@ -5,12 +5,10 @@ use App\Models\Lectura;
 
 class LogicaLectura{
 
-
     public function guardarMedicion(string $data, int $id_sensor){
         $lectura = new Lectura();
         $lectura->data = $data;
         $lectura->id_sensor = $id_sensor;
-
         $lectura->save();
 
         return response()->json($lectura, 201);
