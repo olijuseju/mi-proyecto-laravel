@@ -5,9 +5,11 @@ use App\Models\Lectura;
 
 class LogicaLectura{
 
-    public function guardarMedicion(string $data, int $id_sensor){
+    public function guardarMedicion(string $data, int $id_sensor, float $latitud, float $longitud){
         $lectura = new Lectura();
         $lectura->data = $data;
+        $lectura->latitud = $latitud;
+        $lectura->longitud = $longitud;
         $lectura->id_sensor = $id_sensor;
         $lectura->save();
 

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Lectura extends Model
 {
     use HasFactory;
-    protected $fillable = ['data', 'time_data', 'id_sensor'];
+    protected $fillable = ['data', 'time_data', 'id_sensor', 'latitud', 'longitud'];
 }

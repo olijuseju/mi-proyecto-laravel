@@ -18,8 +18,10 @@ class LecturaController extends Controller
 
         $data = $request->data;
         $id_sensor = $request->id_sensor;
+        $latitud = $request->latitud;
+        $longitud = $request->longitud;
         $logica = new LogicaLectura();
-        return $logica->guardarMedicion($data,$id_sensor);
+        return $logica->guardarMedicion($data,$id_sensor,$latitud,$longitud);
     }
 
 /*    public function update(Request $request){
