@@ -13,9 +13,12 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Esta clase guarda los datos de un sensor
+     * En el array fillable se encuentran sus campos
      *
-     * @var string[]
+     * @param String name
+     * @param String email
+     * @param String password
      */
     protected $fillable = [
         'name',
