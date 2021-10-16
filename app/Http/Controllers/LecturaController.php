@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\String_;
 use SebastianBergmann\Environment\Console;
 
+
+/**
+ * Este controlador se encarga de las lecturas
+ * Es llamado por el archivo api.php para establecer comunicacion con la logica
+ * Sus metodos permiten guardar, eliminar y recuperar mediciones
+ */
+
 class LecturaController extends Controller
 {
 

@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 use App\Http\Logica\LogicaSensor;
 
 
+
+/**
+ * Este controlador se encarga de los sensores
+ * Es llamado por el archivo api.php para establecer comunicacion con la logica
+ * Sus metodos permiten guardar, eliminar y recuperar sensores
+ */
+
+
 class SensorController extends Controller
 {
     /**

@@ -6,6 +6,13 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Logica\LogicaUser;
 
+
+/**
+ * Este controlador se encarga de los usuarios
+ * Es llamado por el archivo api.php para establecer comunicacion con la logica
+ * Sus metodos permiten guardar, eliminar y recuperar usuarios
+ */
+
 class UserController extends Controller
 {
 
