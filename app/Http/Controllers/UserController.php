@@ -8,12 +8,21 @@ use App\Http\Logica\LogicaUser;
 
 class UserController extends Controller
 {
+
+    /**
+     * Esta funcion se encarga de obtener todos los usuarios
+     * @return String devuelve la respuesta REST
+     */
     public function index(){
 
         $logica = new LogicaUser();
         return $logica->obtenerTodosLosUsers();
     }
 
+    /**
+     * Esta funcion se encarga de guardar un usuario
+     * @return String devuelve la respuesta REST
+     */
     public  function store(Request $request){
         $name = $request->name;
         $email = $request->email;
@@ -23,7 +32,8 @@ class UserController extends Controller
         return $logica->guardarUser($name, $email, $password);
     }
 
-    public function update(Request $request, int $id){
+
+   /* public function update(Request $request, int $id){
 
         $user = User::findOrFail($request->id);
 
@@ -33,16 +43,22 @@ class UserController extends Controller
         $user->password = $request->password;
 
         return response()->json($user, 200);
-    }
+    }*/
 
+    /**
+     * Esta funcion se encarga de obtener un usuario por su id
+     * @return String devuelve la respuesta REST
+     */
     public  function show(int $id){
 
         $logica = new LogicaUser();
         return $logica->obtenerUserConId($id);
     }
 
-
-
+    /**
+     * Esta funcion se encarga de eliminar un usuario por su id
+     * @return String devuelve la respuesta REST
+     */
     public function delete(Request $request)
     {
         $logica = new LogicaUser();

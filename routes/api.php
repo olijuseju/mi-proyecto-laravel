@@ -22,6 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
+/**
+ * Rutas para las lecturas
+ */
 Route::get('lecturas',[LecturaController::class, 'index']);
 
 Route::get('lecturas/{id}', [LecturaController::class, 'show']);
@@ -34,6 +39,10 @@ Route::put('lecturas/{id}', [LecturaController::class, 'update']);
 
 Route::delete('lecturas/{id}', [LecturaController::class, 'delete']);
 
+
+/**
+ * Rutas para los sensores
+ */
 Route::get('sensores',[SensorController::class, 'index']);
 
 Route::get('sensores/{id}', [SensorController::class, 'show']);
@@ -44,6 +53,11 @@ Route::put('sensores/{id}', [SensorController::class, 'update']);
 
 Route::delete('sensores/{id}', [SensorController::class, 'delete']);
 
+
+
+/**
+ * Rutas para los usuarios
+ */
 Route::get('users',[UserController::class, 'index']);
 
 Route::get('users/{id}', [UserController::class, 'show']);
