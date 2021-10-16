@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Logica\LogicaNegocio;
 use App\Models\Sensore;
 use Illuminate\Http\Request;
 use App\Http\Logica\LogicaSensor;
@@ -25,7 +26,7 @@ class SensorController extends Controller
      * @return String devuelve la respuesta REST
      */
     public function index(){
-        $logica = new LogicaSensor();
+        $logica = new LogicaNegocio();
         return $logica->obtenerTodosLosSensores();
     }
 
@@ -37,7 +38,7 @@ class SensorController extends Controller
         $name = $request->name;
         $description = $request->description;
         $model = $request->model;
-        $logica = new LogicaSensor();
+        $logica = new LogicaNegocio();
         return $logica->guardarSensor($name, $model, $description);
     }
 
@@ -56,7 +57,7 @@ class SensorController extends Controller
      */
     public  function show(int $id){
 
-        $logica = new LogicaSensor();
+        $logica = new LogicaNegocio();
         return $logica->obtenerSensorConId($id);
     }
 
@@ -66,7 +67,7 @@ class SensorController extends Controller
      */
     public function delete(Request $request)
     {
-        $logica = new LogicaSensor();
+        $logica = new LogicaNegocio();
         return $logica->eliminarSensor($request->id);
     }
 }

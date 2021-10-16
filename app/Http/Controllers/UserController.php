@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Logica\LogicaNegocio;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Logica\LogicaUser;
@@ -26,7 +27,7 @@ class UserController extends Controller
      */
     public function index(){
 
-        $logica = new LogicaUser();
+        $logica = new LogicaNegocio();
         return $logica->obtenerTodosLosUsers();
     }
 
@@ -39,7 +40,7 @@ class UserController extends Controller
         $email = $request->email;
         $email_verified_at = $request->email_verified_at;
         $password = $request->password;
-        $logica = new LogicaUser();
+        $logica = new LogicaNegocio();
         return $logica->guardarUser($name, $email, $password);
     }
 
@@ -62,7 +63,7 @@ class UserController extends Controller
      */
     public  function show(int $id){
 
-        $logica = new LogicaUser();
+        $logica = new LogicaNegocio();
         return $logica->obtenerUserConId($id);
     }
 
@@ -72,7 +73,7 @@ class UserController extends Controller
      */
     public function delete(Request $request)
     {
-        $logica = new LogicaUser();
+        $logica = new LogicaNegocio();
         return $logica->eliminarUser($request->id);
     }
 }

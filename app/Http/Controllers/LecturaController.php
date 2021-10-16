@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Logica\LogicaLectura;
+use App\Http\Logica\LogicaNegocio;
 use App\Models\Lectura;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\String_;
@@ -27,7 +28,7 @@ class LecturaController extends Controller
      * @return String devuelve la respuesta REST
      */
     public function index(){
-        $logica = new LogicaLectura();
+        $logica = new LogicaNegocio();
         return $logica->obtenerTodasLasMediciones();
     }
 
@@ -40,7 +41,7 @@ class LecturaController extends Controller
         $id_sensor = $request->id_sensor;
         $latitud = $request->latitud;
         $longitud = $request->longitud;
-        $logica = new LogicaLectura();
+        $logica = new LogicaNegocio();
         return $logica->guardarMedicion($data,$id_sensor,$latitud,$longitud);
     }
 
@@ -62,7 +63,7 @@ class LecturaController extends Controller
      */
     public  function show(int $id){
 
-        $logica = new LogicaLectura();
+        $logica = new LogicaNegocio();
         return $logica->obtenerLecturaConId($id);
     }
 
@@ -82,7 +83,7 @@ class LecturaController extends Controller
      */
     public  function latest(int $num){
 
-        $logica = new LogicaLectura();
+        $logica = new LogicaNegocio();
         return $logica->obtenerUltimasMediciones($num);
     }
 }

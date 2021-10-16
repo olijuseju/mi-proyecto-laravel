@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Logica\LogicaLectura;
+use App\Http\Logica\LogicaNegocio;
 use Illuminate\Http\Request;
 
 /**
@@ -19,7 +20,7 @@ use Illuminate\Http\Request;
 class LecturasController extends Controller
 {
     public function index(){
-        $logicaLecturas = new LogicaLectura();
+        $logicaLecturas = new LogicaNegocio();
         $lecturas = $logicaLecturas->obtenerTodasLasMediciones();
         return view('lecturas',compact('lecturas'));
     }
