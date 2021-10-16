@@ -6,6 +6,7 @@ use App\Http\Logica\LogicaLectura;
 use App\Models\Lectura;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\String_;
+use SebastianBergmann\Environment\Console;
 
 class LecturaController extends Controller
 {
@@ -24,7 +25,6 @@ class LecturaController extends Controller
      * @return String devuelve la respuesta REST
      */
     public  function store(Request $request){
-
         $data = $request->data;
         $id_sensor = $request->id_sensor;
         $latitud = $request->latitud;

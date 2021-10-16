@@ -3,6 +3,10 @@ namespace App\Http\Logica;
 
 use App\Models\Lectura;
 
+/**
+ * @author Jose Julio Penyaranda
+ *
+ */
 class LogicaLectura{
 
     /**
