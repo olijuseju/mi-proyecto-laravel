@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LecturasController;
+
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

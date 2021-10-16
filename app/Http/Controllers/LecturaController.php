@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\String_;
 use SebastianBergmann\Environment\Console;
 
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
 
 /**
  * Este controlador se encarga de las lecturas

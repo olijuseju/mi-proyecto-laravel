@@ -3,6 +3,11 @@ namespace App\Http\Logica;
 
 use App\Models\Sensore;
 
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
+
 class LogicaSensor{
 
     /**

@@ -4,9 +4,14 @@ namespace App\Http\Logica;
 use App\Models\Lectura;
 
 /**
- * @author Jose Julio Penyaranda
- *
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
  */
+
+//
+//
+// --------------------------------------------------------------
+
 class LogicaLectura{
 
     /**

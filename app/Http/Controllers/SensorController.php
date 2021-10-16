@@ -6,7 +6,10 @@ use App\Models\Sensore;
 use Illuminate\Http\Request;
 use App\Http\Logica\LogicaSensor;
 
-
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
 
 /**
  * Este controlador se encarga de los sensores

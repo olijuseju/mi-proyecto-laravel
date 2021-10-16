@@ -6,6 +6,11 @@ use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\SensorController;
 use \App\Http\Controllers\LecturaController;
 
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
+
 
 /*
 |--------------------------------------------------------------------------

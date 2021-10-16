@@ -4,7 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
 class Lectura extends Model
 {
     /**

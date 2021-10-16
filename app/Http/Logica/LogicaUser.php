@@ -3,6 +3,11 @@ namespace App\Http\Logica;
 
 use App\Models\User;
 
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
+
 class LogicaUser{
 
 

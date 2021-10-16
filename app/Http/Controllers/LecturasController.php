@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Logica\LogicaLectura;
 use Illuminate\Http\Request;
 
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
 
 /**
  * Este controlador se encarga de la comunicacion con el frontend y las lecturas
