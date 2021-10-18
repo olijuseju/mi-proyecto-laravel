@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lecturas', [LecturasController::class, 'index']);
+Route::get('/lecturas', [LecturasController::class, 'index'])->name('lecturas.get');
 
-/*Route::post('lecturas', [LecturaController::class, 'store']);*/
+Route::get('lecturas/{num}', [LecturasController::class, 'show'])->name('lecturas.show');
 

@@ -21,7 +21,15 @@ class LecturasController extends Controller
 {
     public function index(){
         $logicaLecturas = new LogicaNegocio();
+        $num=0;
         $lecturas = $logicaLecturas->obtenerTodasLasMediciones();
-        return view('lecturas',compact('lecturas'));
+        return view('lecturas',compact('lecturas', 'num'));
+    }
+
+    public function show(int $num){
+
+        $logicaLecturas = new LogicaNegocio();
+        $lecturas = $logicaLecturas->obtenerUltimasMediciones($num);
+        return view('lecturas',compact('lecturas','num'));
     }
 }

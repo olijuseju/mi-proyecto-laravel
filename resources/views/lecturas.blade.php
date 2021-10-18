@@ -8,10 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+<input type="text" name="name" value="{{old('num')}}">
+<a type="submit" href="{{route('lecturas.show', $num)}}">Buscar</a>
 <ul>
     @foreach($lecturas as $lectura)
         <li><a href="">{{$lectura}}</a></li>
     @endforeach
 </ul>
+
+
 </body>
 </html>
