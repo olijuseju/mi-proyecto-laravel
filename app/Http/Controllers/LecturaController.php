@@ -2,31 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Logica\LogicaLectura;
+use App\Http\Logica\LogicaNegocio;
 use App\Models\Lectura;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\String_;
+use SebastianBergmann\Environment\Console;
+
+/**
+ * @author Jose Julio Peñaranda
+ * 2021-10-14
+ */
+
+/**
+ * Este controlador se encarga de las lecturas
+ * Es llamado por el archivo api.php para establecer comunicacion con la logica
+ * Sus metodos permiten guardar, eliminar y recuperar mediciones
+ */
 
 class LecturaController extends Controller
 {
 
+    /**
+     * Esta funcion se encarga de obtener todas las mediciones
+     * @return String devuelve la respuesta REST
+     */
     public function index(){
-
-        return Lectura::all();
+        $logica = new LogicaNegocio();
+        return $logica->obtenerTodasLasMediciones();
     }
 
+    /**
+     * Esta funcion se encarga de guardar una medicion
+     * @return String devuelve la respuesta REST
+     */
     public  function store(Request $request){
-
-        $lectura = new Lectura();
-
-        $lectura->data = $request->data;
-        $lectura->time_data = $request->time_data;
-        $lectura->id_sensor = $request->id_sensor;
-
-        $lectura->save();
-
-        return response()->json($lectura, 201);
+        $data = $request->data;
+        $id_sensor = $request->id_sensor;
+        $latitud = $request->latitud;
+        $longitud = $request->longitud;
+        $logica = new LogicaNegocio();
+        return $logica->guardarMedicion($data,$id_sensor,$latitud,$longitud);
     }
 
-    public function update(Request $request){
+/*    public function update(Request $request){
 
         $lectura = Lectura::findOrFail($request->id);
 
@@ -36,16 +55,35 @@ class LecturaController extends Controller
 
         $lectura->save();
         return response()->json($lectura, 200);
-    }
+    }*/
 
+    /**
+     * Esta funcion se encarga de obtener una medicion por su id
+     * @return String devuelve la respuesta REST
+     */
     public  function show(int $id){
-        return Lectura::find($id);
+
+        $logica = new LogicaNegocio();
+        return $logica->obtenerLecturaConId($id);
     }
 
+    /**
+     * Esta funcion se encarga de eliminar una medicion por su id
+     * @return String devuelve la respuesta REST
+     */
     public function delete(Request $request)
     {
         $lectura = Lectura::destroy($request->id);
-
         return response()->json(null, 204);
+    }
+
+    /**
+     * Esta funcion se encarga de obtener la ultima medicion
+     * @return String devuelve la respuesta REST
+     */
+    public  function latest(int $num){
+
+        $logica = new LogicaNegocio();
+        return $logica->obtenerUltimasMediciones($num);
     }
 }
